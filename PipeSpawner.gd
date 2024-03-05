@@ -3,6 +3,7 @@ extends Node
 var scene : PackedScene = preload("res://pipes.tscn")
 var rng = RandomNumberGenerator.new()
 signal kill_player
+signal value_changed(value)
 
 func _ready():
 	spawn_pipes()
@@ -19,3 +20,6 @@ func _on_timer_timeout():
 
 func kill_player_fn():
 	kill_player.emit()
+
+func _on_h_slider_value_changed(value):
+	Speed.speed = value

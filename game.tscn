@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cisb3wqyftsp5"]
+
+[ext_resource type="PackedScene" uid="uid://b2f5iaw5aymmt" path="res://bird.tscn" id="1_s2dia"]
+[ext_resource type="Texture2D" uid="uid://crejwixdcc7qe" path="res://assets/background.jpg" id="2_offei"]
+[ext_resource type="Script" path="res://PipeSpawner.gd" id="3_g61xm"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Bird" parent="." instance=ExtResource("1_s2dia")]
+position = Vector2(86, 286)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575.5, 324.75)
+scale = Vector2(1.8898, 1.41904)
+texture = ExtResource("2_offei")
+
+[node name="PipeSpawner" type="Node" parent="."]
+script = ExtResource("3_g61xm")
+
+[node name="Timer" type="Timer" parent="PipeSpawner"]
+wait_time = 4.0
+autostart = true

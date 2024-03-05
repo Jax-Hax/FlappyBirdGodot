@@ -23,3 +23,5 @@ script = ExtResource("3_g61xm")
 [node name="Timer" type="Timer" parent="PipeSpawner"]
 wait_time = 4.0
 autostart = true
+
+[connection signal="timeout" from="PipeSpawner/Timer" to="PipeSpawner" method="_on_timer_timeout"]

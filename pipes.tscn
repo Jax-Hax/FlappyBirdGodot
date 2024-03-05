@@ -5,29 +5,27 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbgth"]
 size = Vector2(72, 389.125)
 
-[node name="Pipes" type="Node"]
+[node name="Pipes" type="Marker2D"]
 
-[node name="Top Pipe" type="StaticBody2D" parent="."]
+[node name="TopPipe" type="StaticBody2D" parent="."]
 
-[node name="Pipe" type="Sprite2D" parent="Top Pipe"]
+[node name="Pipe" type="Sprite2D" parent="TopPipe"]
 position = Vector2(-6, 173.156)
 scale = Vector2(0.264167, 0.471406)
 texture = ExtResource("1_2822k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Pipe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
 position = Vector2(1, 87.4375)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dbgth")
 
-[node name="Bottom Pipe" type="StaticBody2D" parent="."]
+[node name="BottomPipe" type="StaticBody2D" parent="."]
 
-[node name="Pipe" type="Sprite2D" parent="Bottom Pipe"]
+[node name="Pipe" type="Sprite2D" parent="BottomPipe"]
 position = Vector2(4.99999, 567.68)
 rotation = 3.14159
 scale = Vector2(0.264167, 0.468675)
 texture = ExtResource("1_2822k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Pipe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
 position = Vector2(0, 653.125)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dbgth")

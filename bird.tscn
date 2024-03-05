@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2f5iaw5aymmt"]
+[gd_scene load_steps=4 format=3 uid="uid://b2f5iaw5aymmt"]
 
 [ext_resource type="Texture2D" uid="uid://ck586dq4sjj4y" path="res://assets/bird.png" id="1_jr4o6"]
+[ext_resource type="Script" path="res://bird.gd" id="1_wk3b7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_il0bv"]
 radius = 36.0
 
 [node name="Bird" type="CharacterBody2D"]
+script = ExtResource("1_wk3b7")
 
 [node name="Bird" type="Sprite2D" parent="."]
 position = Vector2(-3, -7)

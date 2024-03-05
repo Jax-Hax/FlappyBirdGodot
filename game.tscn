@@ -24,4 +24,5 @@ script = ExtResource("3_g61xm")
 wait_time = 4.0
 autostart = true
 
+[connection signal="kill_player" from="PipeSpawner" to="Bird" method="_on_pipe_spawner_kill_player"]
 [connection signal="timeout" from="PipeSpawner/Timer" to="PipeSpawner" method="_on_timer_timeout"]

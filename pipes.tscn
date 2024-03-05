@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://7q3en0syqhl4"]
+[gd_scene load_steps=4 format=3 uid="uid://7q3en0syqhl4"]
 
 [ext_resource type="Texture2D" uid="uid://b577wmg0qfj8e" path="res://assets/pipe.webp" id="1_2822k"]
+[ext_resource type="Script" path="res://pipes.gd" id="1_lkdus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbgth"]
 size = Vector2(72, 389.125)
 
 [node name="Pipes" type="Marker2D"]
+script = ExtResource("1_lkdus")
 
-[node name="TopPipe" type="StaticBody2D" parent="."]
+[node name="TopPipe" type="Area2D" parent="."]
 
 [node name="Pipe" type="Sprite2D" parent="TopPipe"]
 position = Vector2(-6, 173.156)
@@ -18,7 +20,7 @@ texture = ExtResource("1_2822k")
 position = Vector2(1, 87.4375)
 shape = SubResource("RectangleShape2D_dbgth")
 
-[node name="BottomPipe" type="StaticBody2D" parent="."]
+[node name="BottomPipe" type="Area2D" parent="."]
 
 [node name="Pipe" type="Sprite2D" parent="BottomPipe"]
 position = Vector2(4.99999, 567.68)
@@ -29,3 +31,8 @@ texture = ExtResource("1_2822k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
 position = Vector2(0, 653.125)
 shape = SubResource("RectangleShape2D_dbgth")
+
+[connection signal="area_entered" from="TopPipe" to="." method="_on_top_pipe_area_entered"]
+[connection signal="body_entered" from="TopPipe" to="." method="_on_top_pipe_body_entered"]
+[connection signal="area_entered" from="BottomPipe" to="." method="_on_bottom_pipe_area_entered"]
+[connection signal="body_entered" from="BottomPipe" to="." method="_on_bottom_pipe_body_entered"]
